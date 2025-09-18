@@ -1,298 +1,111 @@
-'use client';
+import { Facebook, Twitter, Linkedin, Phone, Mail, LocationEdit } from 'lucide-react';
+import { GiBananaPeeled } from 'react-icons/gi';
 
-import Link from 'next/link';
-import Logo from '../common/logo';
-import { FaFacebookF, FaInstagram, FaLinkedinIn, FaTwitter } from 'react-icons/fa';
-import { motion } from 'framer-motion';
-
-export default function Footer() {
+export const Footer = () => {
 	return (
-		<footer className="bg-[#111326] text-gray-300 px-4 py-12 sm:px-8 lg:px-12">
-			<div className="max-w-6xl mx-auto grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-10">
-				<motion.div
-					initial="hidden"
-					whileInView="visible"
-					viewport={{ once: true, amount: 0.5 }}
-					transition={{ duration: 0.5, delay: 0.5 }}
-					variants={{
-						hidden: { opacity: 0, y: 30 },
-						visible: { opacity: 1, y: 0 },
-					}}>
-					<Logo />
-					<motion.p
-						className="text-sm leading-6 mt-4"
-						initial="hidden"
-						whileInView="visible"
-						viewport={{ once: true, amount: 0.5 }}
-						transition={{ duration: 0.5, delay: 0.8 }}
-						variants={{
-							hidden: { opacity: 0, y: 30 },
-							visible: { opacity: 1, y: 0 },
-						}}>
-						Empowering local commerce through technology.
-					</motion.p>
-				</motion.div>
+		<footer className="bg-primary text-white py-12">
+			<div className="px-4 sm:px-8 lg:px-16">
+				<div className="grid md:grid-cols-4 gap-4 lg:gap-8 mb-8">
+					<div className="md:col-span-1">
+						<div className="flex items-center space-x-2 mb-4">
+							<div className="bg-[#87A96B] p-2 rounded">
+								<GiBananaPeeled className="h-5 w-5 text-white" />
+							</div>
+							<span className="text-xl font-semibold text-white">GrowBuddy</span>
+						</div>
+						<p className="text-white/80 text-sm mb-4 lg:max-w-[300px]">
+							Empowering farmers with expert guidance and innovative solutions for sustainable agriculture.
+						</p>
+						<div className="flex gap-3">
+							<Facebook className="h-5 w-5 text-[#87A96B] hover:text-[#87A96B]/90 cursor-pointer" />
+							<Twitter className="h-5 w-5 text-[#87A96B] hover:text-[#87A96B]/90 cursor-pointer" />
+							<Linkedin className="h-5 w-5 text-[#87A96B] hover:text-[#87A96B]/90 cursor-pointer" />
+						</div>
+					</div>
 
-				<motion.div
-					initial="hidden"
-					whileInView="visible"
-					viewport={{ once: true, amount: 0.5 }}
-					transition={{ staggerChildren: 0.2, delayChildren: 0.5 }}>
-					<motion.h4
-						className="text-white font-medium mb-3"
-						initial="hidden"
-						whileInView="visible"
-						viewport={{ once: true, amount: 0.5 }}
-						transition={{ duration: 0.5, delay: 0.5 }}
-						variants={{
-							hidden: { opacity: 0, y: 30 },
-							visible: { opacity: 1, y: 0 },
-						}}>
-						Quick Links
-					</motion.h4>
-					<ul className="space-y-2 text-sm">
-						<motion.li
-							variants={{
-								hidden: {
-									opacity: 0,
-									y: 20,
-								},
-								visible: {
-									opacity: 1,
-									y: 0,
-									transition: {
-										duration: 0.5,
-									},
-								},
-							}}>
-							<Link href="/#about-us" className="hover:underline hover:text-primary duration-300">
-								About Us
-							</Link>
-						</motion.li>
-						<motion.li
-							variants={{
-								hidden: {
-									opacity: 0,
-									y: 20,
-								},
-								visible: {
-									opacity: 1,
-									y: 0,
-									transition: {
-										duration: 0.5,
-									},
-								},
-							}}>
-							<Link href="/#contact-us" className="hover:underline hover:text-primary duration-300">
-								Contact
-							</Link>
-						</motion.li>
-						<motion.li
-							variants={{
-								hidden: {
-									opacity: 0,
-									y: 20,
-								},
-								visible: {
-									opacity: 1,
-									y: 0,
-									transition: {
-										duration: 0.5,
-									},
-								},
-							}}>
-							<Link href="/sign-up?role=merchant" className="hover:underline hover:text-primary duration-300">
-								Merchant Signup
-							</Link>
-						</motion.li>
-					</ul>
-				</motion.div>
+					<div className="md:col-span-1">
+						<h3 className="font-medium text-lg mb-4">Services</h3>
+						<ul className="space-y-2 text-white/80">
+							<li>
+								<a href="#" className="hover:text-[#87A96B] text-sm">
+									Crop Analytics
+								</a>
+							</li>
+							<li>
+								<a href="#" className="hover:text-[#87A96B] text-sm">
+									Irrigation Planning
+								</a>
+							</li>
+							<li>
+								<a href="#" className="hover:text-[#87A96B] text-sm">
+									Pest Management
+								</a>
+							</li>
+							<li>
+								<a href="#" className="hover:text-[#87A96B] text-sm">
+									Soil Testing
+								</a>
+							</li>
+						</ul>
+					</div>
 
-				<motion.div
-					initial="hidden"
-					whileInView="visible"
-					viewport={{ once: true, amount: 0.5 }}
-					transition={{ staggerChildren: 0.2, delayChildren: 0.5 }}>
-					<motion.h4
-						initial="hidden"
-						whileInView="visible"
-						viewport={{ once: true, amount: 0.5 }}
-						transition={{ duration: 0.5, delay: 0.5 }}
-						variants={{
-							hidden: { opacity: 0, y: 30 },
-							visible: { opacity: 1, y: 0 },
-						}}
-						className="text-white font-medium mb-3">
-						Legal
-					</motion.h4>
-					<ul className="space-y-2 text-sm">
-						<motion.li
-							variants={{
-								hidden: {
-									opacity: 0,
-									y: 20,
-								},
-								visible: {
-									opacity: 1,
-									y: 0,
-									transition: {
-										duration: 0.5,
-									},
-								},
-							}}>
-							<Link href="#" className="hover:underline hover:text-primary duration-300">
-								Terms of Service
-							</Link>
-						</motion.li>
-						<motion.li
-							variants={{
-								hidden: {
-									opacity: 0,
-									y: 20,
-								},
-								visible: {
-									opacity: 1,
-									y: 0,
-									transition: {
-										duration: 0.5,
-									},
-								},
-							}}>
-							<Link href="#" className="hover:underline hover:text-primary duration-300">
-								Privacy Policy
-							</Link>
-						</motion.li>
-						<motion.li
-							variants={{
-								hidden: {
-									opacity: 0,
-									y: 20,
-								},
-								visible: {
-									opacity: 1,
-									y: 0,
-									transition: {
-										duration: 0.5,
-									},
-								},
-							}}>
-							<Link href="#" className="hover:underline hover:text-primary duration-300">
-								Cookie Policy
-							</Link>
-						</motion.li>
-					</ul>
-				</motion.div>
+					<div className="md:col-span-1">
+						<h3 className="font-medium text-lg mb-4">Resources</h3>
+						<ul className="space-y-2 text-white/80">
+							<li>
+								<a href="#" className="hover:text-[#87A96B] text-sm">
+									Research Reports
+								</a>
+							</li>
+							<li>
+								<a href="#" className="hover:text-[#87A96B] text-sm">
+									Webinars
+								</a>
+							</li>
+							<li>
+								<a href="#" className="hover:text-[#87A96B] text-sm">
+									Mobile App
+								</a>
+							</li>
+							<li>
+								<a href="#" className="hover:text-[#87A96B] text-sm">
+									Blog
+								</a>
+							</li>
+						</ul>
+					</div>
 
-				<motion.div
-					initial="hidden"
-					whileInView="visible"
-					viewport={{ once: true, amount: 0.5 }}
-					transition={{ staggerChildren: 0.2, delayChildren: 0.5 }}>
-					<motion.h4
-						initial="hidden"
-						whileInView="visible"
-						viewport={{ once: true, amount: 0.5 }}
-						transition={{ duration: 0.5, delay: 0.5 }}
-						variants={{
-							hidden: { opacity: 0, y: 30 },
-							visible: { opacity: 1, y: 0 },
-						}}
-						className="text-white font-medium mb-3">
-						Connect
-					</motion.h4>
-					<ul className="text-sm flex gap-4 mt-4">
-						<motion.li
-							variants={{
-								hidden: {
-									opacity: 0,
-									y: 20,
-								},
-								visible: {
-									opacity: 1,
-									y: 0,
-									transition: {
-										duration: 0.5,
-									},
-								},
-							}}
-							className="bg-primary p-1.5 rounded-md hover:scale-[1.05] transition-all duration-300 cursor-pointer">
-							<a href="#" className="hover:underline hover:text-secondary duration-300">
-								<FaFacebookF className="text-white" />
-							</a>
-						</motion.li>
-						<motion.li
-							variants={{
-								hidden: {
-									opacity: 0,
-									y: 20,
-								},
-								visible: {
-									opacity: 1,
-									y: 0,
-									transition: {
-										duration: 0.5,
-									},
-								},
-							}}
-							className="bg-primary p-1.5 rounded-md hover:scale-[1.05] transition-all duration-300 cursor-pointer">
-							<a href="#" className="hover:underline hover:text-secondary duration-300">
-								<FaInstagram className="text-white" />
-							</a>
-						</motion.li>
-						<motion.li
-							variants={{
-								hidden: {
-									opacity: 0,
-									y: 20,
-								},
-								visible: {
-									opacity: 1,
-									y: 0,
-									transition: {
-										duration: 0.5,
-									},
-								},
-							}}
-							className="bg-primary p-1.5 rounded-md hover:scale-[1.05] transition-all duration-300 cursor-pointer">
-							<a href="#" className="hover:underline hover:text-secondary duration-300">
-								<FaTwitter className="text-white" />
-							</a>
-						</motion.li>
-						<motion.li
-							variants={{
-								hidden: {
-									opacity: 0,
-									y: 20,
-								},
-								visible: {
-									opacity: 1,
-									y: 0,
-									transition: {
-										duration: 0.5,
-									},
-								},
-							}}
-							className="bg-primary p-1.5 rounded-md hover:scale-[1.05] transition-all duration-300 cursor-pointer">
-							<a href="#" className="hover:underline hover:text-secondary duration-300">
-								<FaLinkedinIn className="text-white" />
-							</a>
-						</motion.li>
-					</ul>
-				</motion.div>
+					<div className="md:col-span-1">
+						<h3 className="font-medium text-lg mb-4">Contact</h3>
+						<div className="space-y-2 text-white/80 text-sm">
+							<div className="flex gap-2">
+								<div className="flex justify-center items-center cursor-pointer">
+									<Phone className="h-5 w-5 text-[#87A96B] hover:text-[#87A96B]/90" />
+								</div>
+								<p> +1 (555) 123-4567</p>
+							</div>
+							<div className="flex gap-2">
+								<div className="flex justify-center items-center cursor-pointer">
+									<Mail className="h-5 w-5 text-[#87A96B] hover:text-[#87A96B]/90" />
+								</div>
+								<p> info@growbuddy.com</p>
+							</div>
+							<div className="flex gap-2">
+								<div className="flex justify-center items-center cursor-pointer">
+									<LocationEdit className="h-5 w-5 text-[#87A96B] hover:text-[#87A96B]/90" />
+								</div>
+								<p> 123 Farm Road, Agriculture City</p>
+							</div>
+						</div>
+					</div>
+				</div>
+
+				<div className="border-t border-white pt-6 text-center">
+					<p className="text-white/80 text-sm font-normal">
+						© {new Date().getFullYear()} Farmer Advisory Hub. All rights reserved.
+					</p>
+				</div>
 			</div>
-
-			<motion.div
-				initial="hidden"
-				whileInView="visible"
-				viewport={{ once: true, amount: 0.5 }}
-				transition={{ duration: 0.5, delay: 0.8 }}
-				variants={{
-					hidden: { opacity: 0, y: 30 },
-					visible: { opacity: 1, y: 0 },
-				}}
-				className="mt-12 border-t border-gray-700 pt-6 text-center text-sm text-gray-500">
-				&copy; {new Date().getFullYear()} TradeHub. All rights reserved.
-			</motion.div>
 		</footer>
 	);
-}
+};

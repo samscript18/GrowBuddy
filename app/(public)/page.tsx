@@ -1,11 +1,12 @@
+import Home from '@/components/ui/home';
 import { Metadata } from 'next';
 
 export const metadata: Metadata = {
 	title: 'Home',
 	description:
-		'TradeHub is a web-based e-commerce platform that connects local merchants and vendors to buyers, offering seamless payments, product listings, and delivery services.',
+		'Connect with agricultural experts, access cutting-edge farming techniques, and grow your business with data-driven insights tailored for your farm.',
 };
 
-const Page = () => <div>Home</div>;
+const Page = () => <Home />;
 
 export default Page;

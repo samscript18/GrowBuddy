@@ -48,15 +48,15 @@
 
 :root {
   --radius: 0.625rem;
-  --background: #000000;
+  --background: #ffffff;
   --foreground: oklch(0.145 0 0);
   --card: oklch(1 0 0);
   --card-foreground: oklch(0.145 0 0);
   --popover: oklch(1 0 0);
   --popover-foreground: oklch(0.145 0 0);
-  --primary: #2D6BEF;
+  --primary: #2D5016;
   --primary-foreground: oklch(0.985 0 0);
-  --secondary: #2D6BEF20;
+  --secondary: #87A96B;
   /* --secondary: #2196F320; */
   --secondary-foreground: oklch(0.205 0 0);
   --muted: oklch(0.97 0 0);
@@ -119,6 +119,7 @@
 @layer base {
   * {
     @apply border-border outline-ring/50;
+    scroll-behavior: smooth;
   }
 
   body {

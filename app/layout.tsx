@@ -6,11 +6,10 @@ import { Suspense } from 'react';
 
 export const metadata: Metadata = {
 	title: {
-		default: 'TradeHub',
-		template: 'TradeHub | %s',
+		default: 'GrowBuddy',
+		template: 'GrowBuddy | %s',
 	},
-	description:
-		'TradeHub is a web-based e-commerce platform that connects local merchants and vendors to buyers, offering seamless payments, product listings, and delivery services.',
+	description: 'GrowBuddy - Expert Agricultural Guidance for Modern Farmers',
 };
 
 export default function RootLayout({
