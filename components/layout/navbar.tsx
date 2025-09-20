@@ -5,9 +5,11 @@ import Link from 'next/link';
 import { Facebook, Mail, Menu, Twitter, X } from 'lucide-react';
 import { useState } from 'react';
 import { FaInstagram } from 'react-icons/fa';
+import { usePathname } from 'next/navigation';
 
 export const Navbar = () => {
 	const [isOpen, setIsOpen] = useState<boolean>(false);
+	const pathname = usePathname();
 	return (
 		<nav className="bg-white border-b border-gray-200 py-2 fixed w-full z-50">
 			<div className="px-4 sm:px-8 lg:px-16">
@@ -20,22 +22,32 @@ export const Navbar = () => {
 					</div>
 
 					<div className="hidden md:flex items-center space-x-8 lg:space-x-12">
-						<Link href="#home" className="text-gray-700 hover:text-primary hover:font-medium transition-colors">
+						<Link
+							href="/"
+							className={`${
+								pathname === '/' ? 'text-primary font-medium' : 'text-gray-700'
+							} hover:text-primary hover:font-medium transition-colors`}>
 							Home
 						</Link>
 						<Link
-							href="#planting-guide"
-							className="text-gray-700 hover:text-primary hover:font-medium transition-colors">
+							href="/planting-guides"
+							className={`${
+								pathname === '/planting-guides' ? 'text-primary font-medium' : 'text-gray-700'
+							}  hover:text-primary hover:font-medium transition-colors`}>
 							Planting Guide
 						</Link>
 						<Link
-							href="#chatbot"
-							className="text-gray-700 hover:text-primary hover:font-medium transition-colors">
+							href="/chatbot"
+							className={`${
+								pathname === '/chatbot' ? 'text-primary font-medium' : 'text-gray-700'
+							}  hover:text-primary hover:font-medium transition-colors`}>
 							Chatbot
 						</Link>
 						<Link
-							href="#training-videos"
-							className="text-gray-700 hover:text-primary hover:font-medium transition-colors">
+							href="/training-videos"
+							className={`${
+								pathname === '/training-videos' ? 'text-primary font-medium' : 'text-gray-700'
+							}  hover:text-primary hover:font-medium transition-colors`}>
 							Training Videos
 						</Link>
 					</div>
@@ -56,30 +68,38 @@ export const Navbar = () => {
 						</div>
 
 						<nav className="flex flex-col items-center space-y-8 mt-16">
-							<a
-								href="#"
-								className="text-white text-lg font-normal hover:text-gray-200 transition-all hover:scale-105 animate-in slide-in-from-left duration-500 delay-100"
+							<Link
+								href="/"
+								className={`${
+									pathname === '/' ? 'text-white font-bold' : 'text-white font-normal'
+								} text-lg  hover:text-gray-200 transition-all hover:scale-105 animate-in slide-in-from-left duration-500 delay-100`}
 								onClick={() => setIsOpen(false)}>
 								Home
-							</a>
-							<a
-								href="#planting-guide"
-								className="text-white text-lg font-normal hover:text-gray-200 transition-all hover:scale-105 animate-in slide-in-from-left duration-500 delay-200"
+							</Link>
+							<Link
+								href="/planting-guides"
+								className={`${
+									pathname === '/planting-guides' ? 'text-white font-bold' : 'text-white font-normal'
+								} text-lg hover:text-gray-200 transition-all hover:scale-105 animate-in slide-in-from-left duration-500 delay-200`}
 								onClick={() => setIsOpen(false)}>
 								Planting Guide
-							</a>
-							<a
-								href="#chatbot"
-								className="text-white text-lg font-normal hover:text-gray-200 transition-all hover:scale-105 animate-in slide-in-from-left duration-500 delay-300"
+							</Link>
+							<Link
+								href="/chatbot"
+								className={`${
+									pathname === '/chatbot' ? 'text-white font-bold' : 'text-white font-normal'
+								} text-lg hover:text-gray-200 transition-all hover:scale-105 animate-in slide-in-from-left duration-500 delay-30`}
 								onClick={() => setIsOpen(false)}>
 								Chatbot
-							</a>
-							<a
-								href="#training-videos"
-								className="text-white text-lg font-normal hover:text-gray-200 transition-all hover:scale-105 animate-in slide-in-from-left duration-500 delay-500"
+							</Link>
+							<Link
+								href="/training-videos"
+								className={`${
+									pathname === '/training-videos' ? 'text-white font-bold' : 'text-white font-normal'
+								} text-lg hover:text-gray-200 transition-all hover:scale-105 animate-in slide-in-from-left duration-500 delay-500`}
 								onClick={() => setIsOpen(false)}>
 								Training Videos
-							</a>
+							</Link>
 						</nav>
 
 						<div className="mx-auto mt-16 mb-8 w-48 h-px bg-white/30 animate-in fade-in duration-700 delay-700"></div>
